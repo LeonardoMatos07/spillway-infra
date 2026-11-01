@@ -201,7 +201,8 @@ master user. It creates:
   and the ONS system tables (`subsystem_hourly_balance`, `subsystem_monthly_generation`,
   `power_plant`, `plant_monthly_generation`, `interchange_hourly`, `interchange_monthly`,
   `thermal_dispatch_monthly`, `reservoir`, `subsystem_storage_daily`, `reservoir_daily`,
-  `plant_monthly_spilled_energy`, `transmission_line`, `substation`, `transformer_capacity`)
+  `plant_monthly_spilled_energy`, `transmission_line`, `substation`, `transformer_capacity`,
+  `plant_location`)
   (contract, "How spillway-data writes"), `USAGE` on the `load_run` sequence and the
   `TEMPORARY` privilege on the database, because every load is staged in a temporary table. It
   cannot even read the API tables (members, sessions, usage log).
