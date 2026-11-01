@@ -12,6 +12,12 @@ SELECT id, kind, name, slug, source, state, subsystem FROM stage_plant
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, updated_at = now();
 UPDATE plant SET name = 'Plant 1b' WHERE id = 'P1';
 
+-- approximate position of a plant (task plant_location of spillway-data)
+INSERT INTO plant_location (plant_id, latitude, longitude, location_precision, source)
+VALUES ('P1', -5.8, -36.2, 'substation', 'check');
+UPDATE plant_location SET matched_on = 'check', updated_at = now() WHERE plant_id = 'P1';
+DELETE FROM plant_location WHERE plant_id = 'P1';
+
 INSERT INTO plant_monthly_curtailment (plant_id, month, verified_generation_mwh, curtailed_mwh,
   curtailed_rel_mwh, curtailed_cnf_mwh, curtailed_ene_mwh, curtailed_other_mwh, restricted_hours)
 VALUES ('P1', '2026-09-01', 1, 1, 0, 0, 1, 0, 1);

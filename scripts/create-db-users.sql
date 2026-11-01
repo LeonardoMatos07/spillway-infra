@@ -95,7 +95,8 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON
   public.tariff_flag_monthly,
   public.market_consumption_monthly,
   public.market_agents_monthly,
-  public.flag_rule_month
+  public.flag_rule_month,
+  public.plant_location
 TO energia_data;
 -- News: reads the source catalog and writes the items, never the moderation columns (status,
 -- editor_*, related_links), so a re-collection cannot undo what the admin did.
